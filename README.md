@@ -1,5 +1,15 @@
 # ZhuaTech VoiceClone｜知华科技授权音色克隆工作台
 
+## 本次新增：配音文稿分句与Unicode安全切片（2026-10-23）
+
+按句末标点优先切分配音文稿，保留原文和字符偏移，不截断emoji代理对，便于后续接入TTS。
+
+从工作台进入“专项业务工具”（`/practical.html`）。本次功能执行真实后端计算、支持错误提示、表格预览和完整结果导出；不把旧演示结果冒充成新功能实现。
+
+轻量H5项目没有登录体系，本新增接口默认关闭（503）。部署时以环境变量ZHUATECH_PRACTICAL_TOKEN配置独立32–256位可打印ASCII令牌，然后在专项页面填写该令牌；令牌只保留在本页内存。Compose已透传该变量。不要把真实令牌写入前端、示例文件或Git。旧演示接口不因此变成生产授权体系。
+
+接口：`POST /api/practical/unicode-narration-chunks`。算法、样例、校验及测试命令见[专项升级说明](docs/AI_MULTIMODAL_UPGRADE_20261023.md)。不调用外部模型、不自动写业务单据。
+
 [简体中文](README.md) | [English](README.en.md)
 
 ZhuaTech VoiceClone 是上海如静知华信息科技有限公司推出的授权音色克隆案例项目，围绕声音授权、样本质量检查、音色档案和合成任务编排提供完整的前后端演示。

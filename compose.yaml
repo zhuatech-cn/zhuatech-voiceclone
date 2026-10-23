@@ -3,6 +3,7 @@ services:
   api:
     build: ./backend
     environment:
+      ZHUATECH_PRACTICAL_TOKEN: ${ZHUATECH_PRACTICAL_TOKEN:-}
       ZHUATECH_AUDIO_PROVIDER: ${ZHUATECH_AUDIO_PROVIDER:-local}
       ZHUATECH_AUDIO_BASE_URL: ${ZHUATECH_AUDIO_BASE_URL:-}
       ZHUATECH_AUDIO_MODEL: ${ZHUATECH_AUDIO_MODEL:-voice-clone-provider-model}
